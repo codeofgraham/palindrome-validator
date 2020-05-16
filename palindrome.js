@@ -1,7 +1,7 @@
 //JavaScript document
 //Developed by Graham O'Mahony; copyright 2020
 //Palindrome validator
-const palindromeEntry = document.getElementById("palindrome"), result1 = document.querySelectorAll(".result")[1];
+const palindromeEntry = document.getElementById("palindrome"), result = document.querySelectorAll(".result")[0];
 palindromeEntry.addEventListener("change", palindrome, false);
 function palindrome(x){
 	"use strict";
@@ -15,15 +15,15 @@ function palindrome(x){
 	//console.log(x);
 	x = x.join("");//Joins the separated letters of the substring.
 	if(newPval === "" || newPval === " "){
-		result1.innerHTML = "Enter a word, phrase or sentence above to check if it's a palindrome."
+		result.innerHTML = "Enter a word, phrase, sentence or sequence above to check if it's a palindrome."
 		return false;
 	}
 	if(newPval === x){//If the inputted text is exactly equal to the split, reversed and joined string, it's a palindrome.
-		result1.innerHTML = '"' + pVal + '"' + " is a palindrome.";
+		result.innerHTML = '"' + pVal + '"' + " is a palindrome.";
 		console.log(pVal, ": this is a palindrome.");
 		return true;
 	} else{
-		result1.innerHTML = '"' + pVal + '"' + " is not a palindrome.";
+		result.innerHTML = '"' + pVal + '"' + " is not a palindrome.";
 		console.log(pVal, ": this is not a palindrome.")
 		return false;
 	}
